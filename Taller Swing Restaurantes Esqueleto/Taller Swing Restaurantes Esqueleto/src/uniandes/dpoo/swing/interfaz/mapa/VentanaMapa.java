@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import uniandes.dpoo.swing.interfaz.agregar.PanelMapaAgregar;
 import uniandes.dpoo.swing.interfaz.principal.VentanaPrincipal;
 import uniandes.dpoo.swing.mundo.Restaurante;
 
@@ -51,10 +52,24 @@ public class VentanaMapa extends JFrame implements ActionListener
         this.ventanaPrincipal = ventanaPrincipal;
 
         // Agrega el panel donde se muestra el mapa
-        // TODO completar
+        panelMapa = new PanelMapaVisualizar();
+        add(panelMapa, BorderLayout.NORTH);
 
         // Agrega el panel con los RadioButtons y los configura
-        // TODO completar
+        
+        JPanel panelBotones = new JPanel();
+        
+        radioTodos = new JRadioButton("todos");
+        radioTodos.setActionCommand(TODOS);
+        radioTodos.addActionListener(this);
+        panelBotones.add(radioTodos, BorderLayout.CENTER);
+        
+        radioVisitados = new JRadioButton("visitados");
+        radioVisitados.setActionCommand(VISITADOS);
+        radioVisitados.addActionListener(this);
+        panelBotones.add(radioVisitados, BorderLayout.SOUTH);
+        
+        add(panelBotones);
 
         // Termina de configurar la ventana y la muestra
         pack( );
