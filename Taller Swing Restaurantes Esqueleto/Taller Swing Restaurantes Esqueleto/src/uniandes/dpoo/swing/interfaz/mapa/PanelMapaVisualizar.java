@@ -47,7 +47,6 @@ public class PanelMapaVisualizar extends JPanel
                 int x = restaurante.getX();
                 int y = restaurante.getY();
                 
-                // Dibujar un marcador en el mapa (puedes personalizar esto)
                 g2d.setColor(Color.RED);
                 g2d.fillOval(x - 5, y - 5, 10, 10);
                 g2d.setColor(Color.RED);
